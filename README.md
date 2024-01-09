@@ -1,17 +1,24 @@
-# whatsapp
+<h1 align="center">ChatApp</h1>
+<h3 align="center">Built with Flutter, Dart, and Firebase, this chat app ensures secure OTP login and real-time communication. Store and share emojis, images, and videos. Future enhancements aim to optimize performance, enhance the user experience, and introduce innovative features.</h3>
 
-A new Flutter project.
+- Secure OTP login for enhanced authentication
 
-## Getting Started
+- Real-time communication using Flutter and Dart
 
-This project is a starting point for a Flutter application.
+- Data storage on Firebase for seamless access
 
-A few resources to get you started if this is your first Flutter project:
+- Emoji, image, and video sharing capabilities
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- Ongoing improvements for optimized performance and enhanced user experience.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-# Flutter-ChatApp
+<p align="left">
+</p>
+
+## 🛠 Tech Used ||
+
+```bash
+Flutter,Dart,Firebase
+```
+
+
+
