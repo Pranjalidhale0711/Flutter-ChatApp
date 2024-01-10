@@ -9,6 +9,7 @@
 
 - Emoji, image, and video sharing capabilities
 
+
 - Ongoing improvements for optimized performance and enhanced user experience.
 
 <p align="left">
@@ -20,5 +21,14 @@
 Flutter,Dart,Firebase
 ```
 
+
+
+
+<img width="311"  alt="Screenshot 2024-01-09 at 8 00 03 PM" src="https://github.com/Pranjalidhale0711/Flutter-ChatApp/assets/123875758/5b4c4ae7-7364-4448-af4e-fc09d4e95595">
+
+- Verifies OTP
+<img width="324" alt="Screenshot 2024-01-10 at 10 33 35 PM" src="https://github.com/Pranjalidhale0711/Flutter-ChatApp/assets/123875758/7f149a0b-e4a3-4351-a83b-a299f2d0d7bf">
+
+- Realtime Chatting
 
 
