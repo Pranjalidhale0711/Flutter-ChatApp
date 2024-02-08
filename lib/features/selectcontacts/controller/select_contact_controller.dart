@@ -26,6 +26,6 @@ class SelectContactController {
   });
 
   void selectContact(Contact selectedContact, BuildContext context) {
-    selectContactRepository.Selectcontact(selectedContact, context);
+    selectContactRepository.selectContact(selectedContact, context);
   }
 }

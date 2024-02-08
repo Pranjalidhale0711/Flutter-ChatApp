@@ -50,38 +50,21 @@ class _MobilelayoutscreenState extends ConsumerState<Mobilelayoutscreen>
       child: Scaffold(
         appBar: AppBar(
           backgroundColor: appbarcolor,
-          title: Text(
-            'Chatapp',
-            style: TextStyle(color: textcolor),
+          title: Center(
+            child: Text(
+              'Chats',
+              
+              style: TextStyle(color: textcolor,fontWeight: FontWeight.w700),
+            ),
           ),
-          actions: [
-            IconButton(
-                onPressed: () {},
-                icon: Icon(
-                  Icons.search,
-                  color: const Color.fromARGB(255, 54, 53, 53),
-                )),
-            IconButton(
-                onPressed: () {},
-                icon: Icon(
-                  Icons.more_vert,
-                  color: const Color.fromARGB(255, 51, 50, 50),
-                )),
-          ],
-          bottom: TabBar(
-             controller: tabBarController,
-            tabs: [
-              Tab(text: 'CHATS'),
-             
-            ],
-          ),
+        
         ),
         floatingActionButton: FloatingActionButton(
             onPressed: () {
               Navigator.pushNamed(context, SelectContactsScreen.routeName);
             },
-            child: Icon(Icons.comment),
-            backgroundColor: Color.fromARGB(255, 188, 219, 239)),
+            child: Icon(Icons.comment,color: Colors.grey,),
+            backgroundColor: Color.fromARGB(255, 7, 33, 50)),
         body: ContactsList(),
       ),
     );

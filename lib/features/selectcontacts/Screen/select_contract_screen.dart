@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_contacts/contact.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:whatsapp/Widgets/Colors.dart';
 import 'package:whatsapp/Widgets/common/error.dart';
 import 'package:whatsapp/Widgets/common/loader.dart';
 import 'package:whatsapp/features/selectcontacts/Repository/select_contact_repository.dart';
@@ -21,23 +22,15 @@ class SelectContactsScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Select contact'),
-        actions: [
-          IconButton(
-            onPressed: () {
-              
-            },
-            icon: const Icon(
-              Icons.search,
-            ),
-          ),
-          IconButton(
-            onPressed: () {},
-            icon: const Icon(
-              Icons.more_vert,
-            ),
-          ),
-        ],
+        title: (
+         const Text('Select Contact',style: TextStyle(color: Colors.grey,fontWeight: FontWeight.w700),
+        
+        ))
+        ,
+        backgroundColor: appbarcolor,
+        iconTheme: IconThemeData(color: Colors.grey),
+        
+        
       ),
       body: ref.watch(getcontactprovider).when(
             data: (contactList) => ListView.builder(
@@ -53,6 +46,8 @@ class SelectContactsScreen extends ConsumerWidget {
                           contact.displayName,
                           style: const TextStyle(
                             fontSize: 18,
+                            fontWeight: FontWeight.bold,
+                            color: Color.fromARGB(255, 6, 28, 46)
                           ),
                         ),
                         leading: contact.photo == null

@@ -5,6 +5,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_sound/flutter_sound.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:permission_handler/permission_handler.dart';
+import 'package:whatsapp/Widgets/Colors.dart';
 import 'package:whatsapp/Widgets/common/enums/message_enums.dart';
 import 'package:whatsapp/Widgets/common/utilis/utilis.dart';
 import 'package:whatsapp/features/Chat/Contoller/Chat_controller.dart';
@@ -167,7 +168,7 @@ class _BottomchatfieldState extends ConsumerState<Bottomchatfield> {
                             onPressed: togglekeyboard,
                             icon: const Icon(
                               Icons.emoji_emotions,
-                              color: Colors.grey,
+                              color: Color.fromARGB(255, 45, 43, 43),
                             ),
                           ),
                          
@@ -184,14 +185,14 @@ class _BottomchatfieldState extends ConsumerState<Bottomchatfield> {
                           onPressed: Selectimage,
                           icon: const Icon(
                             Icons.camera_alt,
-                            color: Colors.grey,
+                            color: Color.fromARGB(255, 45, 43, 43),
                           ),
                         ),
                         IconButton(
                           onPressed: Selectvideo,
                           icon: const Icon(
                             Icons.attach_file,
-                            color: Colors.grey,
+                            color: Color.fromARGB(255, 45, 43, 43),
                           ),
                         ),
                       ],
@@ -215,14 +216,14 @@ class _BottomchatfieldState extends ConsumerState<Bottomchatfield> {
                 left: 2,
               ),
               child: CircleAvatar(
-                backgroundColor: const Color(0xFF128C7E),
+                backgroundColor:appbarcolor,
                 radius: 25,
                 child: GestureDetector(
                   child: showsendbutton
-                      ? Icon(Icons.send)
+                      ? Icon(Icons.send,color:Colors.grey,)
                       : isrecording
-                          ? Icon(Icons.close)
-                          : Icon(Icons.mic),
+                          ? Icon(Icons.close,color:Colors.grey,)
+                          : Icon(Icons.mic,color: Colors.grey,),
                   onTap: sendTextmessgae,
                 ),
               ),

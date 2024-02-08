@@ -12,17 +12,20 @@ class Landingscreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: appbarcolor,
+        title: Text(
+            'Welcome to Chatapp',
+            style: TextStyle(
+                color: textcolor, fontSize: 30, fontWeight: FontWeight.w800),
+          
+          ),),
       body: Column(
         children: [
           const SizedBox(
             height: 50,
           ),
-          const Center(
-              child: Text(
-            'Welcome to Chatapp',
-            style: TextStyle(
-                color: textcolor, fontSize: 30, fontWeight: FontWeight.w800),
-          )),
+          
           SizedBox(
             height: size.height / 9,
           ),
@@ -35,7 +38,7 @@ class Landingscreen extends StatelessWidget {
             child: Text(
               'Read our Privacy Policy. Tap "Agree and continue" to accept the Terms of Service.',
               style: TextStyle(
-                  color: textcolor, fontSize: 15, fontWeight: FontWeight.w400),
+                  color: textcolor, fontSize: 15, fontWeight: FontWeight.w800),
             ),
           ),
           SizedBox(

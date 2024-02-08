@@ -26,34 +26,42 @@ class SelectcontactRepository {
     return contacts;
   }
 
-  void Selectcontact(Contact selectcontact, BuildContext context) async {
-    try {
-      var usercollections = await firestore.collection('users').get();
-      bool isfound = false;
-      for (var documents in usercollections.docs) {
-        var userdata = UserModel.fromMap(documents.data());
-        print(selectcontact.phones[0].number);
-        var selectedphonenumber =
-            selectcontact.phones[0].number.replaceAll(' ', '');
-            selectedphonenumber =  selectedphonenumber.replaceAll('(', '');
-     selectedphonenumber =  selectedphonenumber.replaceAll(')', '');
-     selectedphonenumber =  selectedphonenumber.replaceAll('-', '');
-    if ( selectedphonenumber.length < 13) {
-       selectedphonenumber = '+91$selectedphonenumber';
+  void selectContact(Contact selectedContact, BuildContext context) async {
+  try {
+    var userCollection = await firestore.collection('users').get();
+    bool isFound = false;
+    String selectedPhoneNum =
+        selectedContact.phones[0].number.replaceAll(' ', '');
+    selectedPhoneNum = selectedPhoneNum.replaceAll('(', '');
+    selectedPhoneNum = selectedPhoneNum.replaceAll(')', '');
+    selectedPhoneNum = selectedPhoneNum.replaceAll('-', '');
+    if (selectedPhoneNum.length < 13) {
+      selectedPhoneNum = '+91$selectedPhoneNum';
     }
-           if (selectedphonenumber == userdata.phoneNumber) {
-          isfound = true;
-          Navigator.pushNamed(context, MobileChatScreen.routeName,
-              arguments: {'name': userdata.name, 'uid': userdata.uid});
+
+    if (selectedPhoneNum.length != 13) {
+      showSnackbar(context: context, content: 'Number Invalid');
+    } else {
+      for (var document in userCollection.docs) {
+        var userData = UserModel.fromMap(document.data());
+        if (selectedPhoneNum == userData.phoneNumber) {
+          isFound = true;
+          Navigator.push(context, MaterialPageRoute(builder: (context)=>
+          MobileChatScreen(name: userData.name, uid: userData.uid, profilePic: userData.profilePic)
+          ));
         }
       }
-      if (!isfound) {
-        showSnackbar(
-            context: context,
-            content: 'this phone no does not exists on this app');
-      }
-    } catch (e) {
-      showSnackbar(context: context, content: e.toString());
     }
+
+    if (!isFound) {
+      showSnackbar(
+        context: context,
+        content: 'The number $selectedPhoneNum does not exist',
+      );
+    }
+  } catch (e) {
+    showSnackbar(context: context, content: e.toString());
   }
+}
+
 }

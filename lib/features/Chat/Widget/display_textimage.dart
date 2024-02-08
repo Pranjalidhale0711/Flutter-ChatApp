@@ -23,8 +23,8 @@ class DisplayTextImageGIF extends StatelessWidget {
           )
         : Container(
           // padding: const EdgeInsets.all(3),
-           height:200,
-           width: 200,
+           height:160,
+           width: 160,
 
           child:type==MessageEnum.image? CachedNetworkImage(imageUrl: message):VideoPlayerItem(videoUrl: message),
         );

@@ -30,13 +30,13 @@ class ContactsList extends ConsumerWidget {
                       onTap: () {
                         Navigator.of(context).push(MaterialPageRoute(
                             builder: (context) =>
-                                MobileChatScreen(name: chatcontactdata.name, uid: chatcontactdata.contactid)));
+                                MobileChatScreen(name: chatcontactdata.name, uid: chatcontactdata.contactid,profilePic: chatcontactdata.profilepic,)));
                       },
                       child: Padding(
                         padding: EdgeInsets.only(bottom: 10),
                         child: ListTile(
-                          title: Text(chatcontactdata.name),
-                          subtitle: Text(chatcontactdata.lastmessage),
+                          title: Text(chatcontactdata.name,style: TextStyle(color:const Color.fromARGB(255, 3, 19, 32),fontWeight: FontWeight.w500),),
+                          subtitle: Text(chatcontactdata.lastmessage,style: TextStyle(color: const Color.fromARGB(255, 58, 55, 55),fontWeight: FontWeight.w400),),
                           leading: CircleAvatar(
                             backgroundImage:
                                 NetworkImage(chatcontactdata.profilepic),

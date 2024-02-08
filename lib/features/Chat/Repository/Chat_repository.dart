@@ -1,6 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:riverpod/riverpod.dart';
 import 'package:uuid/uuid.dart';
@@ -8,7 +7,6 @@ import 'dart:io';
 import 'package:whatsapp/Widgets/common/enums/message_enums.dart';
 import 'package:whatsapp/Widgets/common/repository/common_firebase_storage_repository.dart';
 import 'package:whatsapp/Widgets/common/utilis/utilis.dart';
-import 'package:whatsapp/data/datas.dart';
 import 'package:whatsapp/models/chat_contact.dart';
 import 'package:whatsapp/models/message.dart';
 import 'package:whatsapp/models/user_model.dart';
